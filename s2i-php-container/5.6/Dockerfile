@@ -113,6 +113,8 @@ RUN ln -s /usr/local/instantclient/sqlplus /usr/bin/sqlplus
 RUN echo 'instantclient,/usr/local/instantclient' | pecl install -f oci8-2.0.11
 
 RUN echo 'extension=oci8.so' > /etc/php.ini
+RUN echo 'extension=redis.so' > /etc/php.d/redis.ini
+RUN echo 'extension=igbinary.so' > /etc/php.d/igbinary.ini
 
 RUN yum clean all -y
 USER 1001
